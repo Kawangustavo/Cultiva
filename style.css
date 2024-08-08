@@ -1,0 +1,202 @@
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 250ms ease, transform 250ms ease;
+}
+
+/* Classe para mostrar o elemento com animação de deslizar */
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: ease-in-out 250ms;
+}
+
+body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar img.logo {
+    height: 5rem; 
+    margin: 13px 0rem 1rem 3rem;
+    filter: drop-shadow(0 0 0.75rem rgb(0, 255, 38));
+    transition: ease-in-out 200ms;
+    cursor: pointer;
+}
+
+.navbar img.logo:hover {
+    height: 5.5rem;
+    transition: ease-in-out 200ms;
+    filter: drop-shadow(0 0 1.5rem rgb(0, 91, 14));
+}
+
+.navbar img.info {
+    width: 2rem;
+    height: 2rem;
+    margin: 10px 100px;
+    cursor: pointer;
+}
+
+.calculator {
+    text-align: center;
+    padding: 5rem;
+    margin: 1.2rem;
+}
+.calculator h1 {
+    margin-bottom: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+.grid input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;
+    outline: none;
+}
+.grid label {
+    display: block;
+    margin-top: 10px;
+}
+.umidade-centralizada {
+    grid-column: 2 / 3;
+    grid-row: 3;
+    justify-self: center;
+    padding-bottom: 1.5rem;
+}
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #aaa;
+    border: none;
+    outline: 0.5rem solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: ease-in-out 250ms;
+}
+
+.button:hover {
+    transition: ease-in-out 250ms;
+    background-color: #0056b3;
+}
+
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; /* Centraliza o texto */
+    color: #333; /* Cor do texto para melhor contraste */
+    padding-bottom: 3rem;
+}
+
+.result ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.result li {
+    margin: 5px 0; /* Space between items */
+    font-size: 16px; /* Adjust font size */
+}
+
+.atingido {
+    color: #04c104; /* Verde para "Atingido" */
+}
+
+.nao-atingido {
+    color: #be0606; /* Vermelho para "Não atingido" */
+}
+
+span.fertilidade-Muito-fertil {
+    color: #1e1ed5; /* Azul para "Muito fértil" */
+    font-size: 1.2rem;
+}
+
+span.fertilidade-Fertil {
+    color: #04c104; /* Verde para "Fertil" */
+    font-size: 1.2rem;
+}
+
+span.fertilidade-Mediana {
+    color: #efef16; /* Amarelo para "Mediano" */
+    font-size: 1.2rem;
+}
+
+span.fertilidade-Infertil {
+    color: #ff0000; /* Vermelho para "Infertil" */
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 10px 2rem; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 1rem; /* Further adjust padding */
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        gap: 1rem; /* Reduced gap */
+    }
+
+    .umidade-centralizada {
+        grid-column: 1; /* Full width on smaller screens */
+        grid-row: auto; /* Reset row for better layout */
+    }
+
+    .button {
+        font-size: 1em; /* Smaller button text on smaller screens */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    .calculator {
+        margin-top: 60px; /* Adjust margin-top for fixed navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar img {
+        height: 4rem; /* Smaller logo on very small screens */
+    }
+
+    .button {
+        font-size: 0.9em; /* Even smaller button text */
+        padding: 6px 12px; /* Adjust button padding */
+    }
+
+    .calculator h1 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    .grid input {
+        padding: 8px; /* Smaller input padding */
+    }
+}
