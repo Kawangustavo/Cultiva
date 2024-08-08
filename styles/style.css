@@ -1,3 +1,5 @@
+@import url(home.css);
+
 .hidden {
     opacity: 0;
     transform: translateX(-100%);
